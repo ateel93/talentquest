@@ -1,0 +1,25 @@
+.progress-bar-container {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  
+  button {
+    margin: 0 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .progress-bar {
+    height: 20px;
+    background-color: #3498db;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .progress-label {
+    margin-left: 10px;
+    font-weight: bold;
+  }
