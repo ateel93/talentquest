@@ -8,6 +8,7 @@ import Profile from './routes/Profile';
 import Help from './routes/Help';
 import About from './routes/About';
 import Contact from './components/Contact';
+import Network from './routes/Network.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: '/help',
         element: <Help />,
+      },
+      {
+        path: '/network',
+        element: <Network />,
       },
       {
         path: '/about',

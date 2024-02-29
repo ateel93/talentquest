@@ -25,10 +25,16 @@ function NavBar() {
                 Tracker
                 </a>
                 <a
+                    href="/network"
+                    className="px-1.5 hover:bg-blue-400 rounded"
+                >
+                Network
+                </a>
+                <a
                     href="/profile"
                     className="px-1.5 hover:bg-blue-400 rounded"
                 >
-                Profile
+                My Profile
                 </a>
                 <a
                     href="/help"

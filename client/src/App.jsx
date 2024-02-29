@@ -1,6 +1,7 @@
 import './App.css';
 import NavBar from './NavBar';
 import Footer from './components/Footer.jsx';
+import { useEffect, useState } from "react";
 // import Profile from './routes/Profile';
 import { Outlet } from 'react-router-dom';
 // import Login from './components/Login';
@@ -8,6 +9,7 @@ import { Outlet } from 'react-router-dom';
 
 
 function App() {
+
   
   return (
     <div className="flex flex-col min-h-screen">
