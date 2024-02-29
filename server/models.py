@@ -25,11 +25,10 @@ class User(db.Model, SerializerMixin):
     name = db.Column(db.String, nullable=False)
     profession = db.Column(db.String)
     skills = db.Column(db.String)
-    contact = db.Column(db.string)
+    contact = db.Column(db.String)
     username = db.Column(db.String, unique=True)
-    # password later
+    # add in a bio section
 
-    job = db.relationship('Job', back_populates='user')
     applys = db.relationship('Apply', back_populates='user')
 
 
@@ -37,11 +36,9 @@ class Apply(db.Model):
     __tablename__ = 'applys'
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('Users.id'))
-    job_id = db.Column(db.Integer, db.ForeignKey('Jobs.id'))
-    # job id (could have resume or date applied)
-
-
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    job_id = db.Column(db.Integer, db.ForeignKey('jobs.id'))
+   
     job = db.relationship('Job', back_populates='applys')
     user = db.relationship('User', back_populates='applys')
 
@@ -57,10 +54,14 @@ class Job(db.Model, SerializerMixin):
     location = db.Column(db.String)
     skill = db.Column(db.String)
     
-    # user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    user = db.relationship('User', back_populates='jobs')
+  
     applys = db.relationship('Apply', back_populates='job')
 
+class Marketing(db.Model):
+    __tablename__ = 'marketing'
+
+    id=db.Column(db.Integer, primary_key = True)
+    email=db.Column(db.String)
 
 
 
