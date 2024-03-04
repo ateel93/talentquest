@@ -10,6 +10,21 @@ import { Outlet } from 'react-router-dom';
 
 function App() {
 
+  const [marketing, setMarketing] = useState('')
+
+  function handleSubmit() {
+    // fetch('http://127.0.0.1:5000/marketing', {
+    //   methods: "POST",
+    //   headers: {
+    //     'content-type': 'application/json',
+    //     "Accept": "application/json"
+    //   },
+    //   body: JSON.stringify({
+    //     email: newemail
+    //    })
+    // })
+  }
+
   
   return (
     <div className="flex flex-col min-h-screen">
@@ -19,10 +34,11 @@ function App() {
       <NavBar />
       <section className="flex-grow flex flex-col bg-blue-50">
         <div>
-          <h2 className="text-lg font-semibold py-2">Search and track jobs from one place.</h2>
-          <div className="pb-2">
+
+          {/* <h2 className="text-lg font-semibold py-2 shadow-xl w-3/4">Talent Quest: Search and track jobs from one place.</h2> */}
+          {/* <div className="pb-2">
             <input type="text" className="py-2 w-96 h-8 text-center shadow-xl" placeholder="Job Title, Keywords" />
-          </div>
+          </div> */}
           <Outlet />
           {/* <Profile /> */}
           {/* <Login /> */}
@@ -30,7 +46,7 @@ function App() {
         <div className="flex flex-col items-end mt-auto">
           <div className='bg-blue-400 w-full relative items-start'>
             <input type="text" placeholder="Sign up for marketing emails" className="w-80 p-2" />
-            <button>Submit</button>
+            <button className='hover:bg-blue-500 rounded-md' onSubmit={handleSubmit}>Submit</button>
           </div>
         </div>
       </section>

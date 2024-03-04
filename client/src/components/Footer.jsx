@@ -5,9 +5,9 @@ function Footer() {
           <a href="/help" className="px-1.5 hover:bg-gray-100 rounded-sm">
             Help Center
           </a>
-          <a href="/about" className="px-1.5 hover:bg-gray-100 rounded-sm">
+          {/* <a href="/about" className="px-1.5 hover:bg-gray-100 rounded-sm">
             About
-          </a>
+          </a> */}
           <a href="/contact" className="px-1.5 hover:bg-gray-100 rounded-sm">
             Contact
           </a>

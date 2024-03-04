@@ -1,11 +1,16 @@
 import { useOutletContext } from "react-router-dom";
+import { useState } from "react";
+import StepTrack from "../components/StepTrack";
 
+  
 
 function Tracker() {
+  
+    
+
     return(
-        <div>
-           <h1>Tracker routing here</h1>
-           <h1>Add some sort of visual element for tracking as well</h1>
+        <div className="object-center">
+           <StepTrack/>
         </div>
     )
 }

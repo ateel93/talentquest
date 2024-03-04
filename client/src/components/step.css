@@ -1,0 +1,26 @@
+.stepperSubDiv {
+    margin: 1.4em;
+    border-radius: 12px;
+    padding: 1.4em;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  
+  .stepperSubDiv h1 {
+    font-weight: 500;
+    text-align: center;
+    color: #000000;
+  }
+  
+  .stepperBtn {
+    outline: none;
+    box-shadow: none;
+    border: none;
+    background: #0ea5e9;
+    /* color: #6b7280; */
+    border-radius: 12px;
+    padding: 0.5em 1.4em;
+    display: inline-block;
+    font-weight: 500;
+    margin: 1.4em;
+  }

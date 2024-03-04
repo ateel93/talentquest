@@ -5,7 +5,7 @@ function JobSearch () {
 
     return(
         <div>
-            <div class="flex flex-col me-4">
+            <div className="flex flex-col me-4">
                 <form>
                     <div className="hover:bg-red-100">
                         <label>
