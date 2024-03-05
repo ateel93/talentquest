@@ -10,7 +10,7 @@ function StepTrack() {
     
 
     return(
-        <div className="w-96 h-8 object-center pt-6 ">
+        <div className="w-96 h-8 object-center pt-6 px-3.5">
         <input type="text"></input>
 
         <Stepper

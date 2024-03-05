@@ -10,20 +10,26 @@ import { Outlet } from 'react-router-dom';
 
 function App() {
 
-  const [marketing, setMarketing] = useState('')
+  const [marketing, setMarketing] = useState([])
+  const [email, setEmail] = useState('')
 
   function handleSubmit() {
-    // fetch('http://127.0.0.1:5000/marketing', {
-    //   methods: "POST",
-    //   headers: {
-    //     'content-type': 'application/json',
-    //     "Accept": "application/json"
-    //   },
-    //   body: JSON.stringify({
-    //     email: newemail
-    //    })
-    // })
+    console.log(email)
+    fetch('http://127.0.0.1:5000/marketing', {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        email
+       })
+    })
+    .then(resp => resp.json())
+    .then(data => setMarketing([...marketing, data]))
   }
+
+  console.log(marketing)
 
   
   return (
@@ -45,8 +51,8 @@ function App() {
         </div>
         <div className="flex flex-col items-end mt-auto">
           <div className='bg-blue-400 w-full relative items-start'>
-            <input type="text" placeholder="Sign up for marketing emails" className="w-80 p-2" />
-            <button className='hover:bg-blue-500 rounded-md' onSubmit={handleSubmit}>Submit</button>
+            <input type="text" placeholder="Sign up for marketing emails" className="w-80 p-2" value={email} onChange={event => setEmail(event.target.value)}/>
+            <button className='hover:bg-blue-500 rounded-md' onClick={handleSubmit}>Submit</button>
           </div>
         </div>
       </section>

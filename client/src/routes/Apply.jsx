@@ -29,13 +29,11 @@ function Apply() {
             <h3 className="py-2.5 font-extrabold">Open Roles</h3>
             <input type="text" className="py-2 w-96 h-8 text-center shadow-xl" placeholder="Search by company, location or job..."  value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)}/>
             <div className="flex flex-wrap justify-items-center items-center overflow-auto max-h-96 pt-2 px-1.5">
-            {newSearch.map(job => (<div className="px-4 pt-4 w-60 max-w-sm p-6 h-60 bg-blue-100 border border-gray-200 hover:bg-blue-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <a href="#">
-                            <h5 className="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{job.title}</h5>
-                        </a>
-                        <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">{job.company}</p>
-                        <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">{job.location}</p>
-                <Description job={job}/>
+            {newSearch.map(job => (<div key={job.id} className="px-4 pt-4 w-60 max-w-sm p-6 h-60 bg-blue-100 border border-gray-200 hover:bg-blue-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <h5 className="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{job.title}</h5>
+                    <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">{job.company}</p>
+                    <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">{job.location}</p>
+                <Description key={job.id} job={job}/>
                 </div>))}
             </div>
         </div>
