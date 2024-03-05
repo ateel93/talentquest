@@ -22,12 +22,12 @@ class User(db.Model, SerializerMixin):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key = True)
+    image = db.Column(db.String)
     name = db.Column(db.String, nullable=False)
     profession = db.Column(db.String)
     skills = db.Column(db.String)
     contact = db.Column(db.String)
     username = db.Column(db.String, unique=True)
-    # add in a bio section
 
     applys = db.relationship('Apply', back_populates='user')
 
@@ -54,7 +54,6 @@ class Job(db.Model, SerializerMixin):
     location = db.Column(db.String)
     skill = db.Column(db.String)
     
-  
     applys = db.relationship('Apply', back_populates='job')
 
 class Marketing(db.Model):

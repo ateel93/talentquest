@@ -1,8 +1,9 @@
 import os
-from flask import Flask, request, session
+from flask import Flask, request, session, jsonify
 from flask_migrate import Migrate
 from flask_cors import CORS
 from models import db, User, Apply, Job, Marketing
+import random
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
@@ -22,7 +23,8 @@ def all_jobs():
 @app.route('/featured')
 def featured_jobs():
     jobs = Job.query.limit(15).all()
-    return [job.to_dict() for job in jobs], 200
+    random_jobs = random.sample(jobs, min(5, len(jobs)))
+    return jsonify([job.to_dict() for job in random_jobs]), 200
 
 @app.route('/users')
 def all_users():
@@ -39,20 +41,17 @@ def user_by_id(id):
         return user.to_dict(), 200
 
 
-# @app.route('/marketing', methods=['POST'])
-# def marketing_signup():
-#     if request.method == 'POST':
-#         try:
-#             json_data = request.get_json()
-#             new_marketing = Marketing(
-#                 email=json_data.get('email')
-#             )
-#             db.session.add(new_marketing)
-#             db.session.commit()
-#             return {"Successfully signed up for marketing"}, 201
-#         except: ValueError as e:
-#             return {'error': Sign up unsuccessful.}
+@app.route('/marketing', methods=['POST'])
+def marketing_signup():
+    json_data = request.get_json()
+    
+    new_signup = Marketing(
+        email=json_data.get('email')
+    )
 
+    db.session.add(new_signup)
+    db.session.commit()
 
+    return new_signup.to_dict(),201
 # Need a route for tracker that pulls jobs loged in user has applied for 
 

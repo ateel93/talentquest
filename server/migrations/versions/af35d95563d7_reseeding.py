@@ -1,8 +1,8 @@
-"""retrying to seed
+"""reseeding
 
-Revision ID: 900ecfb5eae7
+Revision ID: af35d95563d7
 Revises: 
-Create Date: 2024-02-29 16:10:31.266731
+Create Date: 2024-03-05 16:56:15.000670
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '900ecfb5eae7'
+revision = 'af35d95563d7'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -36,6 +36,7 @@ def upgrade():
     )
     op.create_table('users',
     sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('image', sa.String(), nullable=True),
     sa.Column('name', sa.String(), nullable=False),
     sa.Column('profession', sa.String(), nullable=True),
     sa.Column('skills', sa.String(), nullable=True),

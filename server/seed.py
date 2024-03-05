@@ -2,6 +2,7 @@ import random
 from faker import Faker
 from app import app
 from models import db, User, Job, Apply
+import random
 
 faker = Faker()
 
@@ -47,16 +48,24 @@ def create_jobs():
 
 def create_users():
     users_list = []
-    for _ in range(14):
+    image_files= ['ag.jpeg', 'hunter.png', 'jo.jpeg', 'day.png', 'lil.jpeg', 'hats.jpeg', 'teel.jpg', 'ter.jpeg', 'sar.jpeg','el.jpeg', 'm.jpeg', 'mar.jpeg', 'mj.jpeg','kar.jpeg']
+    for i in range(14):
         user = User(
             name=faker.name(),
             profession=faker.job(),
             skills=faker.word(),
             contact=faker.phone_number(),
-            username=faker.user_name()
+            username=faker.user_name(),
+            image=image_files[i % len(image_files)]
 
             # password=faker.password(),
         )
+
+        # i = ['ag.jpeg', 'day.png','el.jpeg','teel.jpg','hunter.png', 'hats.jpeg', 'lil.jpeg', 'm.jpeg', 'mar.jpeg', 'mj.jpeg', 'ter.jpeg', 'sar.jpeg', 'jo.jpeg', 'kar.jpeg' ]
+
+        # for img in i:
+        #     user.image = img
+
         users_list.append(user)
 
     db.session.add_all(users_list)
@@ -66,7 +75,6 @@ def create_users():
 
 if __name__ == '__main__':
     app.app_context().push()
-        # db.create_all()
 
     create_jobs()
     create_users()
