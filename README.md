@@ -1,9 +1,12 @@
 Goals:
 Create a full stack application using React, Python + Flask and Tailwind CSS. 
 
+![Screenshot 2024-03-07 at 2 05 10 PM](https://github.com/ateel93/talentquest/assets/146662726/f4b1f169-c51f-4b44-b6c2-44e5ff76fbf1)
+
 Introduction: 
 Talent Quest is designed to be a one stop shop where users can apply, track and network with other active users. 
 
+![Screenshot 2024-03-07 at 2 05 23 PM](https://github.com/ateel93/talentquest/assets/146662726/3348bb18-3166-483f-89cb-45d345e223cc)
 
 Setup:
 You will need React, Python and Flask to run this project. 
