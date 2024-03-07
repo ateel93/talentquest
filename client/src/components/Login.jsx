@@ -17,6 +17,7 @@ function Login() {
     return(
         <>
         <div className="pt-60 space-y-4">
+        <h4 className="pt-4 font-semibold">Start your search by logging in:</h4>
             <button onClick={toggleModal} className="btn-modal bg-blue-300 py-1 px-2 shadow-l rounded-md hover:bg-blue-400">
                 Login
             </button>
@@ -31,7 +32,6 @@ function Login() {
           <div className="modal-content">
             <div className="flex flex-col items-center">
                 <img className="w-28 h-28" src="./public/tquest.png" alt="Talent Quest Logo" />
-                    <h4 className="pt-4 font-semibold">Start your search by logging in:</h4>
                     <h3 className='text-center pt-2'>Username:</h3>
                     <input type="text" className='w-60 text-center shadow-l rounded-sm ' placeholder="Username" />
                     <h3 className='text-center pt-2'>Password:</h3>

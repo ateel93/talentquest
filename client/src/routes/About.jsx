@@ -22,10 +22,11 @@ function About () {
                         <p class="text-gray-500 pt-2">Keeping track of your job applications has never been easier. Talent Quest provides a centralized dashboard where candidates can monitor the status of their applications, receive updates from employers, and gain valuable insights into their job search progress.</p>
                 </div>
             </div>
-        <div>
-            <h2 className="text-md font-semibold pt-2">Our Commitment</h2> 
-            <h3 className="text-gray-500 pb-2">We prioritize user experience in everything we do. Our platform is designed with candidates in mind, ensuring a user-friendly interface that simplifies the job search journey.</h3>
-        </div>
+            <div>
+                <h2 className="text-md font-semibold pt-2">Our Commitment</h2> 
+                <h3 className="text-gray-500 pb-2">We prioritize user experience in everything we do. Our platform is designed with candidates in mind, ensuring a user-friendly interface that simplifies the job search journey.</h3>
+            </div>
+            
         </div>
     )
 }
