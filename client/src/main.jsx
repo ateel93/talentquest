@@ -9,6 +9,7 @@ import Help from './routes/Help';
 import About from './routes/About';
 import Contact from './components/Contact';
 import Network from './routes/Network.jsx';
+import Login from './components/Login.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: '/apply',
         element: <Apply />,
+      },
+      {
+        path: '/login',
+        element: <Login />,
       },
       {
         path: '/track',

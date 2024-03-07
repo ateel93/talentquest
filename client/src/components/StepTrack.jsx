@@ -1,52 +1,73 @@
 import React from "react";
-import Stepper from 'awesome-react-stepper'
-import './step.css';
-
+import { useState } from "react";
 
 function StepTrack() {
-    
-
-    
-    
+    const [checked, setChecked] = useState('first')   
 
     return(
-        <div className="w-96 h-8 object-center pt-6 px-3.5">
-        <input type="text"></input>
-
-        <Stepper
-            strokeColor="#17253975"
-            fillStroke="#172539"
-            activeColor="#172539"
-            activeProgressBorder="2px solid #17253975"
-            submitBtn={<button className="stepperBtn">Submit</button>}
-            continueBtn={<button className="stepperBtn">Next</button>}
-            backBtn={<button className="stepperBtn">Back</button>}
-            onSubmit={(step) => alert(`Congratulations!`)}>
-            <div className="stepperSubDiv">
-                <h1>Applied</h1>
+        <div className="flex flex-col me-4">
+                <div className="hover:bg-green-100 rounded-md">
+                <label>
+                    <input
+                        type="radio"
+                        checked={checked === "Application"}
+                        onChange={() => setChecked("Application")}
+                    />
+                    Application
+                </label>
             </div>
-            <div className="stepperSubDiv">
-                <h1>HR Call</h1>
+            <div className="hover:bg-green-200 rounded-md">
+                <label>
+                    <input
+                        type="radio"
+                        checked={checked === "HR Call"}
+                        onChange={() => setChecked("HR Call")}
+                    />
+                    HR Call
+                </label>
             </div>
-            <div className="stepperSubDiv">
-                <h1>Hiring Manager</h1>
+            <div className="hover:bg-green-300 rounded-md">
+                <label>
+                    <input
+                        type="radio"
+                        checked={checked === "Hiring Manager"}
+                        onChange={() => setChecked("Hiring Manager")}
+                    />
+                    Hiring Manager
+                </label>
             </div>
-            <div className="stepperSubDiv">
-                <h1>Case Study</h1>
+            <div className="hover:bg-green-400 rounded-md">
+                <label>
+                    <input
+                        type="radio"
+                        checked={checked === "Case Study"}
+                        onChange={() => setChecked("Case Study")}
+                    />
+                    Case Study
+                </label>
             </div>
-            <div className="stepperSubDiv">
-                <h1>Final Round</h1>
+            <div className="hover:bg-green-500 rounded-md">
+                <label>
+                    <input
+                        type="radio"
+                        checked={checked === "Final Round"}
+                        onChange={() => setChecked("Final Round")}
+                    />
+                    Final Round
+                </label>
             </div>
-            <div className="stepperSubDiv">
-                <h1>References/Hired</h1>
+            <div className="hover:bg-green-600 rounded-md">
+                <label>
+                    <input
+                        type="radio"
+                        checked={checked === "References"}
+                        onChange={() => setChecked("References")}
+                    />
+                    References
+                </label>
             </div>
-        </Stepper>
-
-            
-                    
-                    
-                </div>
+        </div>
     )
-}
+};
 
 export default StepTrack;

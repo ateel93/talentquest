@@ -4,6 +4,7 @@ from flask_migrate import Migrate
 from flask_cors import CORS
 from models import db, User, Apply, Job, Marketing
 import random
+from sqlalchemy import func
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
@@ -31,6 +32,15 @@ def all_users():
     users = User.query.all()
     return [user.to_dict() for user in users], 200
 
+@app.route('/profile')
+def user_profile():
+    random_user = User.query.order_by(func.random()).first()
+
+    if random_user:
+        return jsonify(random_user.to_dict()), 200
+    else:
+        return jsonify({'error': 'No users found'}), 404
+
 @app.route('/users/<int:id>')
 def user_by_id(id):
     user = user.query.filter(User.id == id).first()
@@ -53,5 +63,48 @@ def marketing_signup():
     db.session.commit()
 
     return new_signup.to_dict(),201
-# Need a route for tracker that pulls jobs loged in user has applied for 
+
+
+@app.route('/apply', methods=['GET', 'POST'])
+def all_apply():
+    if request.method == 'GET':
+        all_applys = Apply.query.all()
+        results = []
+        for apply in all_applys:
+            results.append(apply.to_dict())
+        return results, 200
+    elif request.method == 'POST':
+        json_data = request.get_json()
+        try: 
+            new_apply = Apply(
+                first = json_data.get('first'),
+                last = json_data.get('last'),
+                dob = json_data.get('dob'),
+                phone = json_data.get('phone'),
+                email = json_data.get('email'),
+                street = json_data.get('street'),
+                city = json_data.get('city'),
+                state = json_data.get('state'),
+                zip = json_data.get('zip'),
+                user_id = json_data.get('user_id'),
+                job_id = json_data.get('job_id')
+            )
+        except ValueError as e:
+            return {'error': str(e)}, 400
+        
+        db.session.add(new_apply)
+        db.session.commit()
+        return new_apply.to_dict(), 201
+    
+    
+@app.route('/deleteapp/<int:id>', methods=['GET','DELETE'])
+def delete_app(id):
+    app = Apply.query.filter(Apply.id == id).first()
+    if request.method == "GET":
+        return app.to_dict(), 200
+    if request.method == "DELETE":
+        db.session.delete(app)
+        db.session.commit()
+
+        return {}, 204
 

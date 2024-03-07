@@ -8,7 +8,7 @@ function NavBar() {
             <nav className="bg-blue-300 py-0.5">
              <a
                     href="/"
-                    className="px-1.5 hover:bg-blue-400 rounded"
+                    className="px-1.5 hover:bg-blue-400 rounded btn active"
                 >
                 Home
                 </a>
@@ -29,6 +29,12 @@ function NavBar() {
                     className="px-1.5 hover:bg-blue-400 rounded"
                 >
                 Network
+                </a>
+                <a
+                    href="/login"
+                    className="px-1.5 hover:bg-blue-400 rounded"
+                >
+                Login
                 </a>
                 <a
                     href="/profile"

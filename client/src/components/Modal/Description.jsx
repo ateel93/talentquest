@@ -1,12 +1,19 @@
 import React, { useState } from "react";
-import "./modal.css";
+import "./profilemodal.css";
+import ApplyForm from "../ApplyForm";
 
 function Description({job}) {
     const [modal, setModal] = useState(false);
+    const [apply, setApply] = useState(false)
 
     const toggleModal = () => {
-      setModal(!modal);
+        setModal(!modal);
     };
+
+
+    function handleThisClick() {
+        setApply(!apply)
+    }
 
 
     return(
@@ -20,18 +27,21 @@ function Description({job}) {
 
             {modal && (
             <div className="modal">
-                <div onClick={toggleModal} className="overlay">
+                <div className="overlay">
                     <div className="modal-content">
                         <h2 className="font-bold py-1">{job.title}</h2>
                         <h2 className="font-bold py-1">{job.company}</h2>
                         <h2 className="py-1">{job.location}</h2>
                         <h2 className="py-1">{job.salary}</h2>
                         <h2 className="py-1">{job.description}</h2>
+                        <div>
+                            <button className="bg-gray-400 py-1 px-2 shadow-l rounded-md hover:bg-gray-500" onClick={handleThisClick}>Apply Now</button>
+                            {apply ?  <ApplyForm key={job.id} job={job}/> : null }
+                            <button className="bg-gray-400 py-1 px-2 shadow-l rounded-md hover:bg-gray-500">Follow</button>
+                        </div>
                         <button className="close-modal" onClick={toggleModal}>
                         x
                         </button>
-                        <button className="bg-gray-400 py-1 px-2 shadow-l rounded-md hover:bg-gray-500">Apply Now</button>
-                        <button className="bg-gray-400 py-1 px-2 shadow-l rounded-md hover:bg-gray-500">Follow</button>
                     </div>
                 </div>
             </div>

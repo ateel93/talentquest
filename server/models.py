@@ -32,15 +32,26 @@ class User(db.Model, SerializerMixin):
     applys = db.relationship('Apply', back_populates='user')
 
 
-class Apply(db.Model):
+class Apply(db.Model, SerializerMixin):
     __tablename__ = 'applys'
 
     id = db.Column(db.Integer, primary_key=True)
+    first=db.Column(db.String)
+    last=db.Column(db.String)
+    dob=db.Column(db.Integer)
+    phone=db.Column(db.Integer)
+    email=db.Column(db.String)
+    street=db.Column(db.String)
+    city=db.Column(db.String)
+    state=db.Column(db.String)
+    zip=db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     job_id = db.Column(db.Integer, db.ForeignKey('jobs.id'))
    
     job = db.relationship('Job', back_populates='applys')
     user = db.relationship('User', back_populates='applys')
+
+    serialize_rules = ('-job.applys', '-user.applys')
 
 
 class Job(db.Model, SerializerMixin):
@@ -61,6 +72,9 @@ class Marketing(db.Model):
 
     id=db.Column(db.Integer, primary_key = True)
     email=db.Column(db.String)
+
+
+
 
 
 

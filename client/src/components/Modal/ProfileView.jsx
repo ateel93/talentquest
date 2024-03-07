@@ -20,7 +20,7 @@ function ProfileView ({user}) {
         .then(data => setUsers(data))
     }, []);
 
-    const toggleModal = () => {
+    const toggleModal = (event) => {
         setModal(!modal);
       };
 

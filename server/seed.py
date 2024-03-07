@@ -31,7 +31,7 @@ def create_jobs():
         location_data = {
             'city': faker.city(),
             'state': faker.state(),
-            'country': faker.country()
+            'country': 'USA'
         }
         job = Job(
             title = random.sample(job_titles, 1)[0],
@@ -57,14 +57,8 @@ def create_users():
             contact=faker.phone_number(),
             username=faker.user_name(),
             image=image_files[i % len(image_files)]
-
-            # password=faker.password(),
         )
 
-        # i = ['ag.jpeg', 'day.png','el.jpeg','teel.jpg','hunter.png', 'hats.jpeg', 'lil.jpeg', 'm.jpeg', 'mar.jpeg', 'mj.jpeg', 'ter.jpeg', 'sar.jpeg', 'jo.jpeg', 'kar.jpeg' ]
-
-        # for img in i:
-        #     user.image = img
 
         users_list.append(user)
 
@@ -75,6 +69,8 @@ def create_users():
 
 if __name__ == '__main__':
     app.app_context().push()
-
+    User.query.delete()
+    Job.query.delete()
+    Apply.query.delete()
     create_jobs()
     create_users()

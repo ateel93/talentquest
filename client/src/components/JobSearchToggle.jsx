@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-function JobSearch () {
-    const [checked, setChecked] = useState('first')
+function JobSearch ({JobSearch, setJobSearch}) {
+    const [checked, setChecked] = useState('first')   
 
-   
+    setJobSearch = checked
 
     return(
         <div className="flex flex-col me-4">

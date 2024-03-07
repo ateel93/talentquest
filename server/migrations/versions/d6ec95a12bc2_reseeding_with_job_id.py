@@ -1,8 +1,8 @@
-"""reseeding
+"""reseeding with job.id
 
-Revision ID: af35d95563d7
+Revision ID: d6ec95a12bc2
 Revises: 
-Create Date: 2024-03-05 16:56:15.000670
+Create Date: 2024-03-06 14:56:08.749269
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'af35d95563d7'
+revision = 'd6ec95a12bc2'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -47,6 +47,15 @@ def upgrade():
     )
     op.create_table('applys',
     sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('first', sa.String(), nullable=True),
+    sa.Column('last', sa.String(), nullable=True),
+    sa.Column('dob', sa.Integer(), nullable=True),
+    sa.Column('phone', sa.Integer(), nullable=True),
+    sa.Column('email', sa.String(), nullable=True),
+    sa.Column('street', sa.String(), nullable=True),
+    sa.Column('city', sa.String(), nullable=True),
+    sa.Column('state', sa.String(), nullable=True),
+    sa.Column('zip', sa.String(), nullable=True),
     sa.Column('user_id', sa.Integer(), nullable=True),
     sa.Column('job_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['job_id'], ['jobs.id'], name=op.f('fk_applys_job_id_jobs')),
