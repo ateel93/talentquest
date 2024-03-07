@@ -3,9 +3,9 @@
 ## Goals: 
 Create a full stack application using React, Python + Flask and Tailwind CSS. 
 
-![Screenshot 2024-03-07 at 2 05 10 PM](https://github.com/ateel93/talentquest/assets/146662726/f4b1f169-c51f-4b44-b6c2-44e5ff76fbf1)
 
 ---
+![Screenshot 2024-03-07 at 2 05 10 PM](https://github.com/ateel93/talentquest/assets/146662726/cf4e7659-044d-4522-9557-48c46e38540e)
 
 
 ## Introduction: 
