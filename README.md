@@ -22,7 +22,7 @@ Tailwind CSS
 ## Setup:
 You will need *React, Python and Flask* to run this project. 
 
-##Front End: 
+## Front End: 
 Navigate to the client folder and run:
 1. npm install
 2. npm start
