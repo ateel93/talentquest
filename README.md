@@ -1,7 +1,6 @@
 # Talent Quest
 
-## Goals: 
-Create a full stack application using React, Python + Flask and Tailwind CSS. 
+For my Flatiron School Capstone project I created a Full-Stack Job Search Engine using React, Python + Flask and Tailwind CSS. Coming from a background in recruiting, my goal was to create a seamless user experience where applicants could network with eachother, apply for, and search for jobs. While some may automatically think of Linkedin, I wanted a site where applicants could continuously track where they are in the process after applying for a job.
 
 
 ---
