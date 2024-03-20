@@ -14,6 +14,10 @@ Talent Quest is designed to be a one stop shop where users can apply, track and 
 ![Screenshot 2024-03-07 at 2 05 23 PM](https://github.com/ateel93/talentquest/assets/146662726/3348bb18-3166-483f-89cb-45d345e223cc)
 
 ---
+## Current Tech Stack:
+React
+Flask
+Tailwind CSS
 
 ## Setup:
 You will need *React, Python and Flask* to run this project. 
