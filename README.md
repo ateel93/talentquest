@@ -7,10 +7,11 @@ For my Flatiron School Capstone project I created a Full-Stack Job Search Engine
 ![Screenshot 2024-03-07 at 2 05 10 PM](https://github.com/ateel93/talentquest/assets/146662726/cf4e7659-044d-4522-9557-48c46e38540e)
 
 
-## Introduction: 
+## Job Search Page: 
 Talent Quest is designed to be a one stop shop where users can apply, track and network with other active users. 
 
 ![Screenshot 2024-03-07 at 2 05 23 PM](https://github.com/ateel93/talentquest/assets/146662726/3348bb18-3166-483f-89cb-45d345e223cc)
+
 
 ---
 ## Current Tech Stack:
