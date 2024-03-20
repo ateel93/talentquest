@@ -14,13 +14,9 @@ Talent Quest is designed to be a one stop shop where users can apply, track and 
 
 
 ---
-## Current Tech Stack:
-React
-Flask
-Tailwind CSS
 
 ## Setup:
-You will need *React, Python and Flask* to run this project. 
+You will need *React, Python and Flask* installed to run this project. 
 
 ## Front End: 
 Navigate to the client folder and run:
